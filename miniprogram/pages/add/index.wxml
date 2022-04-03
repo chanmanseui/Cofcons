@@ -1,0 +1,82 @@
+<wxs module="util" src="../util.wxs" />
+<view class="container">
+  <scroll-view scroll-y="true" style="height: 1306rpx; width: 750rpx; display: block; box-sizing: border-box" bindscrolltolower="lower" bindchange="loadingChange">
+  <view class="form-group" style="width: 670rpx; height: 390rpx; display: block; box-sizing: border-box">
+    <view class="form-cell" style="width: 670rpx; height: 166rpx; display: block; box-sizing: border-box">
+      <view class="form-cell_title">Name</view>
+      <input class="form-cell_input" placeholder="Please input（in 10 words）" placeholder-class="form-cell_title-placeholder"
+        bindinput="onTitleInput" value="{{title}}" />
+    </view>
+    <view class="form-cell">
+      <view class="form-cell_title">Content</view>
+      <input class="form-cell_input" placeholder="Make some comment（in 100 words）" placeholder-class="form-cell_title-placeholder"
+        bindinput="onDescInput" value="{{desc}}" />
+    </view>
+  </view>
+
+  <view class="form-group">
+    <view class="form-cell inline">
+      <view>Class</view>
+      <view class="option">Option</view>
+    </view>
+    <view class="form-cell inline">
+      <view>Coffe Class</view>
+      <picker class="option" bindchange="onChooseFreq" range="{{freqOptions}}">
+        {{freqOptions[freq]}}
+      </picker>
+      <picker class="selector" bindchange="onChooseFreq" range="{{freqOptions}}">
+        <image class="selector" src="../../images/add/next.png" />
+      </picker>
+    </view>
+    <view class="form-cell inline">
+      <view>Size</view>
+      <picker class="option" bindchange="onChooseFreq" range="{{freqOptions2}}">
+        {{freqOptions2[freq]}}
+      </picker>
+      <picker class="selector" bindchange="onChooseFreq" range="{{freqOptions2}}">
+        <image class="selector" src="../../images/add/next.png" />
+      </picker>
+    </view>
+    <view class="form-cell inline">
+      <view>Size</view>
+      <picker class="option" bindchange="onChooseFreq" range="{{freqOptions3}}">
+        {{freqOptions3[freq]}}
+      </picker>
+      <picker class="selector" bindchange="onChooseFreq" range="{{freqOptions3}}">
+        <image class="selector" src="../../images/add/next.png" />
+      </picker>
+    </view>
+    <view class="form-cell inline">
+      <view>Size</view>
+      <picker class="option" bindchange="onChooseFreq" range="{{freqOptions4}}">
+        {{freqOptions4[freq]}}
+      </picker>
+      <picker class="selector" bindchange="onChooseFreq" range="{{freqOptions4}}">
+        <image class="selector" src="../../images/add/next.png" />
+      </picker>
+    </view>
+    <view class="form-cell inline">
+      <view>Size</view>
+      <picker class="option" bindchange="onChooseFreq" range="{{freqOptions5}}">
+        {{freqOptions5[freq]}}
+      </picker>
+      <picker class="selector" bindchange="onChooseFreq" range="{{freqOptions5}}">
+        <image class="selector" src="../../images/add/next.png" />
+      </picker>
+    </view>
+  </view>
+  <view class="form-group">
+    <view class="form-cell inline" style="width: 666rpx; height: 100rpx; display: flex; box-sizing: border-box">
+      <view>Add some annex</view>
+      <view class="upload-text" bindtap="addFile">
+        {{(files.length === 0 ? "To add annex" : util.filterStr(fileName, 15))}}
+      </view>
+      <image class="upload" bindtap="addFile" src="../../images/add/next.png"></image>
+    </view>
+  </view>
+  <view class="footer">
+    <view class="reset" bindtap="resetTodo">Reset</view>
+    <view class="save" bindtap="saveTodo">Save</view>
+  </view>
+  </scroll-view>
+</view>
